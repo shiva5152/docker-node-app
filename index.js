@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import postRouter from "./routes/postRoute.js";
 import userRouter from "./routes/userRoutes.js";
 import cors from "cors";
+import dotenv from "dotenv";
+dotenv.config();
 
 // 172.29.0.2 node-app ip
 // 172.29.0.3 mongo-db ip
@@ -17,6 +19,7 @@ async function connectDB() {
       "mongodb://shiva:123shiva@mongo:27017/?authSource=admin"
     );
     console.log("MongoDB connected");
+    console.log(process.env.PORT);
 
     // console.log(process.env.SESSION_SECRET, "secret");
   } catch (err) {
